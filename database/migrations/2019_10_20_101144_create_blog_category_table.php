@@ -13,7 +13,7 @@ class CreateBlogCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('blogs_categories', function (Blueprint $table) {
+        Schema::create('blog_categories', function (Blueprint $table) {
             $table->bigInteger('blog_id')->unsigned();
             $table->bigInteger('categories_id')->unsigned();
             $table->foreign('categories_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
@@ -28,6 +28,6 @@ class CreateBlogCategoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blogs_categories');
+        Schema::dropIfExists('blog_categories');
     }
 }
